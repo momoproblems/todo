@@ -1,7 +1,27 @@
 /* UTILS */
 /* ------------------------------------- */
 :root {
-    --navbar-color: #393E46;
-    --navbar-text-color: #EEEEEE;
-    --main-color: #EEEEEE
+	--navbar-color: #393e46;
+	--navbar-text-color: #eeeeee;
+	--main-color: #eeeeee;
+	--footer-color: #00adb5;
+}
+
+/* FOOTER */
+/* ------------------------------------- */
+
+footer {
+	grid-area: 3 / 1 / -1 / -1;
+	background-color: var(--footer-color);
+	color: var(--navbar-text-color);
+
+	padding: 1rem;
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer a {
+	margin: 0 0.5rem;
 }
