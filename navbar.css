@@ -1,9 +1,8 @@
-
 /* NAVBAR */
 /* ------------------------------------- */
 
-.navbar {
-    grid-column: 1 / 3;
+nav {
+	grid-column: 1 / 3;
 
 	display: flex;
 	justify-content: space-between;
@@ -16,7 +15,7 @@
 	font-size: 2.5rem;
 	margin: 1rem;
 	font-family: 'Lobster', cursive;
-    color: var(--navbar-text-color);
+	color: var(--navbar-text-color);
 }
 
 .navbar-links ul {
@@ -26,14 +25,14 @@
 
 .navbar-links li a {
 	text-decoration: none;
-    color: var(--navbar-text-color);
+	color: var(--navbar-text-color);
 	padding: 1.5rem;
 	display: block;
-	font-size: 1.5rem
+	font-size: 1.5rem;
 }
 
 .navbar-links li:hover {
-	background-color: #00ADB5;
+	background-color: #00adb5;
 }
 
 /* TOGGLE NAVBAR */
@@ -86,9 +85,9 @@
 	.navbar-links li {
 		text-align: center;
 	}
-	
+
 	.navbar-links li a {
-		padding: .5rem
+		padding: 0.5rem;
 	}
 
 	.navbar-links.active {
