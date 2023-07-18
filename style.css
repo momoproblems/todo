@@ -25,11 +25,18 @@
 	border: 1px solid white;
 	text-align: center;
 	border-radius: 3px;
-	padding: 1rem 2rem;
+	padding: 1rem 4rem;
 	margin: 1rem 0;
 	flex: 1;
 	width: 100%;
 	transition: all 0.3s ease-in-out;
+}
+
+#sidebarButtonsLine {
+	width: 100%;
+	height: 1px;
+	background-color: var(--white-text-color);
+	margin: 1rem 0;
 }
 
 .sidebar-button:hover {
@@ -37,4 +44,23 @@
 	color: var(--sidebar-color);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
+}
+
+/* MAIN */
+/* -------------------------------------  */
+
+main {
+	grid-area: 2 / 2 / 3 / 3;
+	background-color: var(--main-color);
+	padding: 1rem;
+}
+
+#tasksTitle {
+	font-size: 2rem;
+}
+
+#mainTasksLine {
+	width: 100%;
+	height: 1px;
+	background-color: black;
 }
