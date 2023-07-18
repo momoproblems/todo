@@ -6,6 +6,27 @@
 	grid-template: auto 1fr auto / auto 1fr;
 }
 
+/* MAIN */
+/* -------------------------------------  */
+
+main {
+	grid-area: 2 / 2 / 3 / 3;
+	background-color: var(--main-color);
+	padding: 1rem;
+	position: relative;
+	height: 100vh;
+}
+
+#tasksTitle {
+	font-size: 2rem;
+}
+
+#mainTasksLine {
+	width: 100%;
+	height: 1px;
+	background-color: black;
+}
+
 /* SIDEBAR */
 /* -------------------------------------  */
 
@@ -18,7 +39,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 .sidebar-button {
@@ -27,8 +48,6 @@
 	border-radius: 3px;
 	padding: 1rem 4rem;
 	margin: 1rem 0;
-	flex: 1;
-	width: 100%;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -46,21 +65,40 @@
 	transition: all 0.3s ease-in-out;
 }
 
-/* MAIN */
+/* TASK */
 /* -------------------------------------  */
 
-main {
-	grid-area: 2 / 2 / 3 / 3;
-	background-color: var(--main-color);
+.task {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 1rem 0;
+	border-radius: 3px;
+	border: 1px solid black;
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(253, 172, 83, 1) 100%
+	);
+}
+
+.task > * {
+	border: 1px solid black;
 	padding: 1rem;
 }
 
-#tasksTitle {
-	font-size: 2rem;
+.title {
+	font-size: 1.5rem;
 }
 
-#mainTasksLine {
-	width: 100%;
-	height: 1px;
-	background-color: black;
+.description {
+	flex: 1;
+	font-size: 1.5rem;
+}
+
+.task-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 }
