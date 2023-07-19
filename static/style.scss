@@ -178,7 +178,7 @@ footer {
 .main-header {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	margin: 1rem;
 
 	#title {
@@ -188,24 +188,28 @@ footer {
 	}
 
 	.add-icon {
-		color: #00adb5;
+		margin: 0 4rem;
+		color: black;
 		font-size: 24px;
-	}
 
-	#mainTasksLine {
-		width: 100%;
-		height: 1px;
-		background-color: black;
-		margin: 1rem 0;
-		border: 2px solid red;
+		&:hover {
+			cursor: pointer;
+		}
 	}
+}
+
+#mainTasksLine {
+	width: 100%;
+	height: 1px;
+	background-color: black;
+	margin: 1rem;
 }
 
 .task {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin: 1rem;
+	margin: 0.5rem;
 	border-radius: 3px;
 	background: rgb(255, 255, 255);
 	background: linear-gradient(
