@@ -14,7 +14,7 @@ main {
 	background-color: var(--main-color);
 	padding: 1rem;
 	position: relative;
-	height: 100vh;
+	height: 80.3vh;
 }
 
 #tasksTitle {
@@ -81,24 +81,39 @@ main {
 		rgba(255, 255, 255, 1) 0%,
 		rgba(253, 172, 83, 1) 100%
 	);
+	transition: all 0.3s ease-in-out;
 }
+
+
 
 .task > * {
 	border: 1px solid black;
-	padding: 1rem;
+	margin: 0 0.5rem;
+	padding: 0.5rem;
 }
 
 .title {
-	font-size: 1.5rem;
+	flex: 2;
+	font-size: 1rem;
 }
 
-.description {
-	flex: 1;
-	font-size: 1.5rem;
+.title:hover {
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .task-buttons {
+	width: 5rem;
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-between;
+}
+
+
+/* BLUR START */
+#blur.active {
+	filter: blur(10px);
+	pointer-events: none; /* Disable pointer events */
+	user-select: none; /* Disable user selection */
 }
