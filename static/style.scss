@@ -174,11 +174,25 @@ footer {
 /* TASK */
 /* ------------------------------------- */
 
+.main-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid green;
+	margin: 1rem;
+
+	#title {
+		font-size: 2rem;
+		line-height: 1;
+		font-family: 'Noto Serif Khitan Small Script', sans-serif;
+	}
+}
+
 .task {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin: 1rem 0;
+	margin: 1rem;
 	border-radius: 3px;
 	border: 1px solid black;
 	background: rgb(255, 255, 255);
@@ -190,7 +204,7 @@ footer {
 	transition: all 0.3s ease-in-out;
 
 	> * {
-		border: 1px solid black;
+		border: 1px solid red;
 		margin: 0 0.5rem;
 		padding: 0.5rem;
 	}
