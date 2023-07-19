@@ -37,26 +37,7 @@
 				<div class="sidebar-button" id="inbox">Projects</div>
 			</div>
 
-			<main>
-				<div class="main-header">
-					<div id="title">Tasks</div>
-					<div id="addTask"><i class="fa-solid fa-plus add-icon" id="showForm"></i></i></div>
-				</div>
-				<div id="mainTasksLine"></div>
-				<div class="task">
-					<div class="checkbox">
-						<input type="checkbox"/>
-					</div>
-					<div class="title">Do Homework</div>
-					<div class="due-date">Due: 12/12/2020</div>
-					<div class="task-buttons">
-						<div><i class="fa-regular fa-pen-to-square"></i></div>
-						<div><i class="fa-regular fa-trash-can"></i></div>
-						<div><i class="fa-solid fa-info"></i></div>
-					</div>
-				</div>
-			</main>
-			
+						
 			<dialog id="inputTaskForm">
 				<form method="dialog">
 					<div class="form-input">
@@ -76,10 +57,40 @@
 
 					<div class="form-input">
 						<label for="priority">Priority: </label>
-						<input type="radio" id="priority" name="priority"/>
+						<div class="priority-buttons">
+							<label><input type="radio" id="priority" name="lowPriority"/>low</label>
+							<input type="radio" id="priority" name="medPriority"/>
+							<input type="radio" id="priority" name="highPpriority"/>
+						</div>
+					</div>
+
+					<div class="form-buttons">
+						<button value="cancel" formmethod="dialog">Cancel</button>
+						<button type="submit" id="submit">Submit</button>
 					</div>
 				</form>
-			</div>
+			</dialog>
+
+			<main>
+				<div class="main-header">
+					<div id="title">Tasks</div>
+					<div id="addTask"><i class="fa-solid fa-plus add-icon" onclick="inputTaskForm.showModal()"></i></i></div>
+				</div>
+				<div id="mainTasksLine"></div>
+				<div class="task">
+					<div class="checkbox">
+						<input type="checkbox"/>
+					</div>
+					<div class="title">Do Homework</div>
+					<div class="due-date">Due: 12/12/2020</div>
+					<div class="task-buttons">
+						<div><i class="fa-regular fa-pen-to-square"></i></div>
+						<div><i class="fa-regular fa-trash-can"></i></div>
+						<div><i class="fa-solid fa-info"></i></div>
+					</div>
+				</div>
+			</main>
+
 
 			<footer>
 				<p>Created by mustachemo :)</p>
