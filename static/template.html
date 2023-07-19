@@ -40,7 +40,7 @@
 			<main>
 				<div class="main-header">
 					<div id="title">Tasks</div>
-					<div id="addTask"><i class="fa-solid fa-plus add-icon"></i></i></div>
+					<div id="addTask"><i class="fa-solid fa-plus add-icon" id="showForm"></i></i></div>
 				</div>
 				<div id="mainTasksLine"></div>
 				<div class="task">
@@ -57,21 +57,26 @@
 				</div>
 			</main>
 			
-			<div class="modal">
-				<form method="post">
+			<dialog id="inputTaskForm">
+				<form method="dialog">
 					<div class="form-input">
 						<label for="task">Task: </label>
-						<input type="text" placeholder="Type your task here!" id="task" name="task"/><br>
+						<input type="text" placeholder="Type your task here!" id="task" name="task"/>
 					</div>
 
 					<div class="form-input">
 						<label for="dueDate">Due Date: </label>
-						<input type="date" placeholder="Type your task here!" id="dueDate" name="dueDate"/><br>
+						<input type="date" placeholder="Type your task here!" id="dueDate" name="dueDate"/>
 					</div>
 
 					<div class="form-input">
-						<label for="description">description: </label>
+						<label for="description">Description: </label>
 						<textarea rows="5" id="description" name="description"></textarea>
+					</div>
+
+					<div class="form-input">
+						<label for="priority">Priority: </label>
+						<input type="radio" id="priority" name="priority"/>
 					</div>
 				</form>
 			</div>
@@ -82,7 +87,7 @@
 					<i class="fa-brands fa-github" style="color: #000000"></i
 				></a>
 			</footer>
-		</div>
+		</dialog>
 
 		<script src="https://kit.fontawesome.com/cc64a29b8a.js" crossorigin="anonymous"></script>
 		<script src="index.js"></script>

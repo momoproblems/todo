@@ -7,3 +7,15 @@ const navBarLinks = document.querySelector('.navbar-links');
 toggleButton.addEventListener('click', function () {
 	return navBarLinks.classList.toggle('active');
 });
+
+const showForm = document.getElementById('showForm');
+const form = document.getElementById('inputTaskForm');
+
+showForm.addEventListener('click', function () {
+	form.showModal();
+});
+
+// ! danger zone
+// ? question
+// * important
+// todo to do
