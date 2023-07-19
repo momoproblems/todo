@@ -273,6 +273,10 @@ footer {
 	border-radius: 10px;
 }
 
+dialog::backdrop {
+  	backdrop-filter: blur(7px); /* Adjust the blur intensity as needed */
+}
+
 form {
 	.form-input {
 		display: grid;
@@ -296,7 +300,7 @@ form {
 
 	.form-buttons {
 		@include flex-row-center;
-		justify-content: space-evenly;
+		justify-content: space-around;
 		margin: 1rem;
 
 		button {
