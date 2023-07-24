@@ -1,0 +1,366 @@
+/* UTILS */
+/* ------------------------------------- */
+$navbar-color: #222831;
+$white-text-color: #eeeeee;
+$sidebar-color: #393e46;
+$main-color: #eeeeee;
+$footer-color: #00adb5;
+
+@mixin flex-row-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin flex-column-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+/* NAVBAR */
+/* ------------------------------------- */
+
+nav {
+	grid-column: 1 / 3;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $navbar-color;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+	#brand-title {
+		font-size: 2.5rem;
+		margin: 1rem;
+		font-family: 'Lobster', cursive;
+		color: $white-text-color;
+	}
+
+	.navbar-links {
+		ul {
+			display: flex;
+			font-family: 'Playfair Display', serif;
+		}
+
+		li a {
+			text-decoration: none;
+			color: $white-text-color;
+			padding: 1.5rem;
+			display: block;
+			font-size: 1.5rem;
+		}
+
+		li:hover {
+			background-color: #00adb5;
+		}
+	}
+
+	/* TOGGLE NAVBAR */
+	/* ------------------------------------- */
+
+	.navbar-toggle {
+		position: absolute;
+		top: 1.5rem;
+		right: 1.5rem;
+		display: none;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 30px;
+		height: 21px;
+
+		cursor: pointer;
+		font-size: 2rem;
+
+		.bar {
+			width: 100%;
+			height: 3px;
+			background-color: $white-text-color;
+		}
+	}
+}
+
+/* MEDIA QUERIES */
+/* ------------------------------------- */
+
+@media (max-width: 500px) {
+	.navbar-toggle {
+		display: flex;
+	}
+
+	.navbar-links {
+		display: none;
+		width: 100%;
+	}
+
+	.navbar {
+		flex-direction: column;
+		align-items: flex-start;
+
+		ul {
+			flex-direction: column;
+			width: 100%;
+
+			li {
+				text-align: center;
+
+				a {
+					padding: 0.5rem;
+				}
+			}
+		}
+
+		&.active {
+			.navbar-links {
+				display: flex;
+			}
+		}
+	}
+}
+
+/* FOOTER */
+/* ------------------------------------- */
+
+footer {
+	grid-area: 3 / 1 / -1 / -1;
+	background-color: $footer-color;
+	padding: 0.5rem;
+	font-size: 1.3rem;
+	@include flex-row-center;
+
+	a {
+		margin: 0 0.5rem;
+	}
+}
+
+/* CONTAINER */
+/* ------------------------------------- */
+
+#container {
+	display: grid;
+	grid-template: auto 1fr auto / auto 1fr;
+	height: 100vh;
+	width: 100vw;
+	background-color: $main-color;
+}
+
+/* SIDEBAR */
+/* ------------------------------------- */
+
+.sidebar {
+	grid-area: 2 / 1 / 3 / 2;
+	background-color: $sidebar-color;
+	padding: 1rem;
+	color: $white-text-color;
+
+	@include flex-column-center;
+	justify-content: flex-start;
+
+	.sidebar-button {
+		border: 1px solid white;
+		text-align: center;
+		border-radius: 3px;
+		padding: 1rem 4rem;
+		margin: 1rem 0;
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			background-color: $white-text-color;
+			color: $sidebar-color;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	#sidebarButtonsLine {
+		width: 100%;
+		height: 1px;
+		background-color: $white-text-color;
+		margin: 1rem 0;
+	}
+}
+
+/* TASK */
+/* ------------------------------------- */
+
+.main-header {
+	@include flex-row-center;
+	margin: 1rem;
+
+	#title {
+		font-size: 2rem;
+		line-height: 1;
+		font-family: 'Noto Serif Khitan Small Script', sans-serif;
+	}
+
+	.add-icon {
+		margin: 0 4rem;
+		border: 3px solid black;
+		color: black;
+		font-size: 24px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+#mainTasksLine {
+	width: 100%;
+	height: 1px;
+	background-color: black;
+	margin: 1rem;
+}
+
+.task {
+	@include flex-row-center;
+	justify-content: space-between;
+	margin: 0.5rem;
+	border-radius: 3px;
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(253, 172, 83, 1) 100%
+	);
+	transition: all 0.3s ease-in-out;
+
+	> * {
+		margin: 0 0.5rem;
+		padding: 0.5rem;
+	}
+
+	.title {
+		flex: 2;
+		font-size: 1rem;
+
+		&.done {
+			text-decoration: line-through;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.task-buttons {
+		width: 5rem;
+		@include flex-row-center;
+		justify-content: space-between;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&:hover {
+		transition: all 0.2s ease-in-out;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	}
+}
+
+/* BLUR START */
+/* ------------------------------------- */
+#blur.active {
+	filter: blur(10px);
+	pointer-events: none; /* Disable pointer events */
+	user-select: none; /* Disable user selection */
+}
+
+/* MODAL */
+/* ------------------------------------- */
+
+#inputTaskForm {
+	background-color: $footer-color;
+	border-radius: 10px;
+}
+
+dialog::backdrop {
+  	backdrop-filter: blur(7px); /* Adjust the blur intensity as needed */
+}
+
+form {
+	.form-input {
+		display: grid;
+		width: 50vw;
+		margin: 1rem;
+
+		grid-template-columns: 25% 75%;
+
+		label {
+			font-size: 1.2rem;
+			text-align: center;
+			overflow-wrap: break-word;
+		}
+
+		input {
+			border-radius: 3px;
+			border: 1px solid black;
+			font-size: 1rem;
+		}
+
+		.priority-buttons {
+			@include flex-row-center;
+			flex-wrap: wrap;
+			justify-content: center;
+			border: 1px solid red;
+
+			.buttons-container {
+				position: relative;
+				height: 3rem;
+				width: 4rem;
+
+
+				input {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					cursor: pointer;
+					z-index: 2;
+				}
+
+				.radio-tile {
+					@include flex-column-center;
+					height: 100%;
+					border: 2px solid black;
+					border-radius: 3px;
+					transition: all 0.3s ease-in-out;
+
+				}
+
+				label {
+					font-size: 1rem;
+					text-align: center;
+					overflow-wrap: break-word;
+					z-index: 1;
+				}
+
+				input:checked + .radio-tile {
+					background-color: rgba(253, 172, 83, 1);
+					color: white;
+					transition: all 0.3s ease-in-out;
+				}
+			}
+		}
+	}
+
+	.form-buttons {
+		@include flex-row-center;
+		justify-content: space-around;
+		margin: 1rem;
+
+		button {
+			border: 1px solid black;
+			border-radius: 3px;
+			padding: 0.5rem 1rem;
+			font-size: 1rem;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				cursor: pointer;
+				background-color: $sidebar-color;
+				color: white;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+	}
+}
