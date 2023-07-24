@@ -296,6 +296,51 @@ form {
 			border: 1px solid black;
 			font-size: 1rem;
 		}
+
+		.priority-buttons {
+			@include flex-row-center;
+			flex-wrap: wrap;
+			justify-content: center;
+			border: 1px solid red;
+
+			.buttons-container {
+				position: relative;
+				height: 3rem;
+				width: 4rem;
+
+
+				input {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					cursor: pointer;
+					z-index: 2;
+				}
+
+				.radio-tile {
+					@include flex-column-center;
+					height: 100%;
+					border: 2px solid black;
+					border-radius: 3px;
+					transition: all 0.3s ease-in-out;
+
+				}
+
+				label {
+					font-size: 1rem;
+					text-align: center;
+					overflow-wrap: break-word;
+					z-index: 1;
+				}
+
+				input:checked + .radio-tile {
+					background-color: rgba(253, 172, 83, 1);
+					color: white;
+					transition: all 0.3s ease-in-out;
+				}
+			}
+		}
 	}
 
 	.form-buttons {
